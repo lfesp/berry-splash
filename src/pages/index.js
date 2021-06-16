@@ -1,182 +1,37 @@
 import * as React from "react"
-
-// styles
-const pageStyles = {
-  color: "#232129",
-  padding: 96,
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-const headingAccentStyles = {
-  color: "#663399",
-}
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
-const listStyles = {
-  marginBottom: 96,
-  paddingLeft: 0,
-}
-const listItemStyles = {
-  fontWeight: 300,
-  fontSize: 24,
-  maxWidth: 560,
-  marginBottom: 30,
-}
-
-const linkStyle = {
-  color: "#8954A8",
-  fontWeight: "bold",
-  fontSize: 16,
-  verticalAlign: "5%",
-}
-
-const docLinkStyle = {
-  ...linkStyle,
-  listStyleType: "none",
-  marginBottom: 24,
-}
-
-const descriptionStyle = {
-  color: "#232129",
-  fontSize: 14,
-  marginTop: 10,
-  marginBottom: 0,
-  lineHeight: 1.25,
-}
-
-const docLink = {
-  text: "Documentation",
-  url: "https://www.gatsbyjs.com/docs/",
-  color: "#8954A8",
-}
-
-const badgeStyle = {
-  color: "#fff",
-  backgroundColor: "#088413",
-  border: "1px solid #088413",
-  fontSize: 11,
-  fontWeight: "bold",
-  letterSpacing: 1,
-  borderRadius: 4,
-  padding: "4px 6px",
-  display: "inline-block",
-  position: "relative",
-  top: -2,
-  marginLeft: 10,
-  lineHeight: 1,
-}
-
-// data
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial/",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-    color: "#E95800",
-  },
-  {
-    text: "How to Guides",
-    url: "https://www.gatsbyjs.com/docs/how-to/",
-    description:
-      "Practical step-by-step guides to help you achieve a specific goal. Most useful when you're trying to get something done.",
-    color: "#1099A8",
-  },
-  {
-    text: "Reference Guides",
-    url: "https://www.gatsbyjs.com/docs/reference/",
-    description:
-      "Nitty-gritty technical descriptions of how Gatsby works. Most useful when you need detailed information about Gatsby's APIs.",
-    color: "#BC027F",
-  },
-  {
-    text: "Conceptual Guides",
-    url: "https://www.gatsbyjs.com/docs/conceptual/",
-    description:
-      "Big-picture explanations of higher-level Gatsby concepts. Most useful for building understanding of a particular topic.",
-    color: "#0D96F2",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-    color: "#8EB814",
-  },
-  {
-    text: "Build and Host",
-    url: "https://www.gatsbyjs.com/cloud",
-    badge: true,
-    description:
-      "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!",
-    color: "#663399",
-  },
-]
+import "../styles.scss"
 
 // markup
 const IndexPage = () => {
   return (
-    <main style={pageStyles}>
-      <title>Home Page</title>
-      <h1 style={headingStyles}>
-        Congratulations
-        <br />
-        <span style={headingAccentStyles}>— you just made a Gatsby site! </span>
-        <span role="img" aria-label="Party popper emojis">
-          🎉🎉🎉
+    <main className="layout">
+      {/* <header>
+        <div className="container">
+          <div className="row">
+            <a>ONE</a>
+            <a>TWO</a>
+          </div>
+        </div>
+      </header> */}
+      <div className="container">
+        <span className="logo">
+          <svg width="100" height="100" viewBox="0 0 108 86" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M78.8663 42.8213C78.9512 43.875 78.9946 44.9404 78.9946 46.0159C78.9946 67.6664 61.4434 85.2176 39.7929 85.2176C18.1424 85.2176 0.591187 67.6664 0.591187 46.0159C0.591187 24.3654 18.1424 6.81421 39.7929 6.81421C41.3828 6.81421 42.9506 6.90886 44.491 7.09284C38.405 12.1382 37.1854 17.9201 36.7553 24.2405L36.7525 24.2458L36.7445 24.2613C40.541 33.1788 45.2116 42.2046 66.2195 43.6736C70.3348 43.9613 74.626 43.5956 78.8663 42.8213ZM99.6635 0.444768C99.2046 0.336427 98.6897 0.218355 98.1241 0.09375C98.5517 0.187946 98.9503 0.27841 99.3176 0.363758C99.4362 0.391311 99.5515 0.418328 99.6635 0.444768ZM87.9134 13.3026L87.1261 14.0664C81.2063 11.5265 74.826 9.57308 68.6343 9.14012C52.4141 8.00589 45.1001 12.0949 40.3931 18.297C40.9224 16.2587 41.7368 14.3805 43.0245 12.6067C45.519 9.1704 50.0668 5.75767 58.8104 2.66141C67.2362 -0.322309 77.7982 -0.129331 86.4969 0.912605C90.801 1.42815 94.5578 2.13959 97.2361 2.7218L97.4551 2.76963C97.2144 3.07095 96.9577 3.38896 96.6857 3.7219C94.5748 6.30562 91.5541 9.77066 87.9134 13.3026ZM97.2133 22.2913C97.2986 22.3412 97.3837 22.391 97.4684 22.4409C100.164 24.0267 102.582 25.5911 104.611 26.9747C105.591 27.6434 106.478 28.2683 107.26 28.831C107.45 28.9681 107.634 29.1014 107.811 29.2308C107.618 29.3342 107.417 29.4407 107.209 29.5499C104.54 30.9553 100.764 32.8149 96.3506 34.6278C87.4387 38.2884 76.2691 41.6125 66.4118 40.9232C56.2796 40.2147 50.4799 37.7133 46.7922 34.642C43.4347 31.8457 41.5544 28.3667 39.8338 24.4596C46.8427 23.1297 53.4977 23.9623 61.384 24.9489C67.5492 25.7202 74.4669 26.5856 82.8945 26.5856C69.8593 20.7623 54.0672 17.5497 40.7135 22.7738C42.6367 19.5454 44.8196 16.9264 48.0185 15.0374C52.1012 12.6266 58.2404 11.1771 68.442 11.8905C78.2993 12.5798 88.8975 17.426 97.2133 22.2913Z" fill="white"/>
+          </svg>
+          <span className="logo-text">berry</span>
         </span>
-      </h1>
-      <p style={paragraphStyles}>
-        Edit <code style={codeStyles}>src/pages/index.js</code> to see this page
-        update in real-time.{" "}
-        <span role="img" aria-label="Sunglasses smiley emoji">
-          😎
-        </span>
-      </p>
-      <ul style={listStyles}>
-        <li style={docLinkStyle}>
-          <a
-            style={linkStyle}
-            href={`${docLink.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
-          >
-            {docLink.text}
-          </a>
-        </li>
-        {links.map(link => (
-          <li key={link.url} style={{ ...listItemStyles, color: link.color }}>
-            <span>
-              <a
-                style={linkStyle}
-                href={`${link.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
-              >
-                {link.text}
-              </a>
-              {link.badge && (
-                <span style={badgeStyle} aria-label="New Badge">
-                  NEW!
-                </span>
-              )}
-              <p style={descriptionStyle}>{link.description}</p>
-            </span>
-          </li>
-        ))}
-      </ul>
-      <img
-        alt="Gatsby G Logo"
-        src="data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2a10 10 0 110 20 10 10 0 010-20zm0 2c-3.73 0-6.86 2.55-7.75 6L14 19.75c3.45-.89 6-4.02 6-7.75h-5.25v1.5h3.45a6.37 6.37 0 01-3.89 4.44L6.06 9.69C7 7.31 9.3 5.63 12 5.63c2.13 0 4 1.04 5.18 2.65l1.23-1.06A7.959 7.959 0 0012 4zm-8 8a8 8 0 008 8c.04 0 .09 0-8-8z' fill='%23639'/%3E%3C/svg%3E"
-      />
+        <div className="row">
+          <p>Thanks for clicking our code! We’re a group of students who want to make healthy eating fast and simple. You’d really help us out by filling out our survey and letting us know how our product can help you best. </p> 
+          <a className="button" href="https://www.google.com/search?q=dog+image&oq=dog+image&aqs=chrome..69i57j0i433j0l8.904j0j1&sourceid=chrome&ie=UTF-8" target="_blank"><span>take our survey</span></a>
+        </div>
+        <div className="row">
+          <p>We’d also love to chat with you over the phone or on Zoom! This would be a 15 minute informal chat to just hear what you have to say about nutrition and shopping. (We learn about your opinions and you get to rant!)</p>
+          <a className="button" href="https://www.google.com/search?q=dog+image&oq=dog+image&aqs=chrome..69i57j0i433j0l8.904j0j1&sourceid=chrome&ie=UTF-8" target="_blank"><span>schedule interview</span></a>
+        </div>
+        
+        <a className="contact"  href="https://www.google.com/search?q=dog+image&oq=dog+image&aqs=chrome..69i57j0i433j0l8.904j0j1&sourceid=chrome&ie=UTF-8" target="_blank">interested in the beta? <br /> reach out to us!</a>
+      </div>
+      
     </main>
   )
 }

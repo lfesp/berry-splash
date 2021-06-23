@@ -92,9 +92,23 @@ header {
 p {
     font-weight: 500;
     font-style: italic;
-    width: 420px;
     text-align: justify;
     animation: 1.4s ease-in 0s 1 appear;
+}
+
+.hidden { visibility: hidden;}
+
+.buttontext {
+    width: 420px;
+}
+
+.maintext{
+    width: 600px;
+    text-align: center;
+    @media(max-width: 976px) {
+        text-align: justify;
+        width: 420px;
+    }
 }
 
 svg {

@@ -21,11 +21,11 @@ const IndexPage = () => {
           <span className="logo-text">berry</span>
         </span>
         <div className="row">
-          <p className="buttontext">Thanks for clicking our code! We’re a group of students who want to make healthy eating fast and simple. You’d really help us out by scheduling an interview and letting us know how our product can help you best. </p>        
+          <p className="buttontext">Thanks for clicking our code! We’re a group of students who want to make healthy eating fast and simple. We want to hear from everyone, but especially from those with diabetes. Please help us out by filling out our quick survey and letting us know how our product can best help you.</p>        
           <a className="button" href="https://princetonsurvey.az1.qualtrics.com/jfe/form/SV_09aNCANlxMlDYGi" target="_blank" rel="noreferrer"><span>take survey</span></a>
         </div>
         <div className="row">
-          <p className="buttontext">We’d love to chat with you over the phone or on Zoom! This would be a 15 minute informal chat to just hear what you have to say about nutrition and shopping. (We learn about your opinions and you get to rant!)</p>
+          <p className="buttontext">We’d also love to chat with you over the phone or on Zoom! This would be a 15 minute informal interview to just hear what you have to say about nutrition and shopping.</p>
           <a className="button" href="https://calendly.com/berryhealthy" target="_blank" rel="noreferrer"><span>schedule interview</span></a>
         </div>
         <a className="contact" href = "mailto:contact@berryhealthy.co?subject=hi berry team!&body=I'm interested in trying the beta version of your product!">interested in the beta? <br /> reach out to us!</a>
